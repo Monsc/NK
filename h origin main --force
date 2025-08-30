@@ -1,0 +1,5 @@
+[33m5b5a729[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m fix: 修复应用错误和优化监控系统 - 修复健康检查端点503错误，简化监控逻辑 - 添加内存监控API端点 (/api/metrics) - 修复Next.js配置警告，移除不支持的选项 - 添加图标组件替代favicon.ico - 修复浏览器翻译导致的水合错误 - 优化应用稳定性和性能
+[33m7e41cfd[m feat: 企业级生产环境质量提升 - 添加完整的安全、日志、监控、错误处理系统 - 实现CI/CD流水线、Docker容器化、生产部署指南 - 增强代码质量工具和项目文档 - 提升项目到企业生产级标准
+[33me76a17c[m Refactor: Focus on British monarchy abolition with British English, remove democracy/republic concepts
+[33m28d10b3[m Refactor: Remove AI automation UI, keep English interface, maintain backend AI automation
+[33md1312e7[m Fix ESLint configuration and clean up project

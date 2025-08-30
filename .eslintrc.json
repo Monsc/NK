@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "no-console": "off",
+    "no-debugger": "error",
+    "prefer-const": "error",
+    "no-unused-vars": "warn",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-html-link-for-pages": "warn",
+    "@next/next/no-page-custom-font": "warn"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "NoKing - For a Democratic UK",
+  "short_name": "NoKing",
+  "description": "Advocating for a democratic UK without hereditary privilege",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["politics", "education", "news"],
+  "lang": "en-GB",
+  "dir": "ltr"
+}

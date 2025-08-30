@@ -1,0 +1,388 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 主色调 - 民主红 */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    /* 主色 - 深红色调 */
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* 次要色 - 蓝色调 */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    
+    /* 强调色 - 金色 */
+    --accent: 45 93% 47%;
+    --accent-foreground: 222.2 84% 4.9%;
+    
+    /* 静音色 */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    /* 破坏性色 */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* 边框和输入 */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 0 84% 60%;
+    
+    /* 圆角 */
+    --radius: 0.75rem;
+    
+    /* 自定义色彩变量 */
+    --democratic-red: 0 84% 60%;
+    --democratic-red-light: 0 84% 70%;
+    --democratic-red-dark: 0 84% 50%;
+    --royal-blue: 210 100% 50%;
+    --royal-blue-light: 210 100% 60%;
+    --royal-blue-dark: 210 100% 40%;
+    --gold-accent: 45 93% 47%;
+    --gold-accent-light: 45 93% 57%;
+    --gold-accent-dark: 45 93% 37%;
+    --success-green: 142 76% 36%;
+    --warning-orange: 38 92% 50%;
+    --info-blue: 199 89% 48%;
+  }
+
+  .dark {
+    /* 暗色主题 - 深色背景 */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* 主色 - 亮红色调 */
+    --primary: 0 84% 70%;
+    --primary-foreground: 222.2 84% 4.9%;
+    
+    /* 次要色 - 深蓝色调 */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* 强调色 - 亮金色 */
+    --accent: 45 93% 57%;
+    --accent-foreground: 222.2 84% 4.9%;
+    
+    /* 静音色 */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    /* 破坏性色 */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* 边框和输入 */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 0 84% 70%;
+    
+    /* 自定义色彩变量 - 暗色版本 */
+    --democratic-red: 0 84% 70%;
+    --democratic-red-light: 0 84% 80%;
+    --democratic-red-dark: 0 84% 60%;
+    --royal-blue: 210 100% 60%;
+    --royal-blue-light: 210 100% 70%;
+    --royal-blue-dark: 210 100% 50%;
+    --gold-accent: 45 93% 57%;
+    --gold-accent-light: 45 93% 67%;
+    --gold-accent-dark: 45 93% 47%;
+    --success-green: 142 76% 46%;
+    --warning-orange: 38 92% 60%;
+    --info-blue: 199 89% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-variation-settings: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* 标题字体系统 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 600;
+  }
+  
+  /* 正文字体 */
+  p, li, div {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+  
+  /* 代码字体 */
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  }
+}
+
+@layer utilities {
+  /* 背景模式 */
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  .bg-dots-pattern {
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--muted-foreground) / 0.3) 1px, transparent 0);
+    background-size: 16px 16px;
+  }
+  
+  .bg-hero-pattern {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--secondary) / 0.1) 100%);
+  }
+  
+  /* 文字渐变 */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold-accent)), hsl(var(--gold-accent-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-blue {
+    background: linear-gradient(135deg, hsl(var(--royal-blue)), hsl(var(--royal-blue-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* 玻璃效果 */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .glass-effect-dark {
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* 阴影效果 */
+  .shadow-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  
+  .shadow-glow-gold {
+    box-shadow: 0 0 20px hsl(var(--gold-accent) / 0.3);
+  }
+  
+  .shadow-glow-blue {
+    box-shadow: 0 0 20px hsl(var(--royal-blue) / 0.3);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 4px 6px -1px hsl(var(--foreground) / 0.1), 0 2px 4px -1px hsl(var(--foreground) / 0.06);
+  }
+  
+  .shadow-medium {
+    box-shadow: 0 10px 15px -3px hsl(var(--foreground) / 0.1), 0 4px 6px -2px hsl(var(--foreground) / 0.05);
+  }
+  
+  .shadow-large {
+    box-shadow: 0 20px 25px -5px hsl(var(--foreground) / 0.1), 0 10px 10px -5px hsl(var(--foreground) / 0.04);
+  }
+  
+  /* 过渡效果 */
+  .transition-all-300 {
+    transition: all 0.3s ease;
+  }
+  
+  .transition-all-500 {
+    transition: all 0.5s ease;
+  }
+  
+  .transition-transform {
+    transition: transform 0.2s ease;
+  }
+  
+  /* 边框效果 */
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gold-accent))) border-box;
+  }
+  
+  .border-gradient-dark {
+    border: 2px solid transparent;
+    background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
+                linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gold-accent))) border-box;
+  }
+  
+  /* 文字效果 */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* 间距系统 */
+  .space-y-responsive > * + * {
+    margin-top: clamp(1rem, 3vw, 2rem);
+  }
+  
+  .space-x-responsive > * + * {
+    margin-left: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+@layer components {
+  /* 按钮样式 */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all-300 shadow-soft hover:shadow-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all-300 shadow-soft hover:shadow-medium;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-all-300 shadow-soft hover:shadow-medium;
+  }
+  
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all-300;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-accent hover:text-accent-foreground transition-all-300;
+  }
+  
+  /* 卡片样式 */
+  .card-hover {
+    @apply hover:shadow-medium hover:scale-105 transition-all-300;
+  }
+  
+  .card-elevated {
+    @apply shadow-medium hover:shadow-large transition-all-300;
+  }
+  
+  .card-glass {
+    @apply glass-effect shadow-soft;
+  }
+  
+  /* 文本样式 */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .text-hero {
+    @apply text-gradient font-bold tracking-tight;
+  }
+  
+  .text-subtitle {
+    @apply text-muted-foreground font-medium;
+  }
+  
+  /* 布局样式 */
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  
+  .section-margin {
+    @apply my-12 sm:my-16 lg:my-20;
+  }
+  
+  /* 背景样式 */
+  .bg-pattern {
+    @apply bg-grid-pattern;
+  }
+  
+  .bg-hero {
+    @apply bg-hero-pattern;
+  }
+  
+  /* 动画样式 */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+  
+  /* 状态样式 */
+  .status-success {
+    @apply text-green-600 bg-green-50 border-green-200;
+  }
+  
+  .status-warning {
+    @apply text-orange-600 bg-orange-50 border-orange-200;
+  }
+  
+  .status-info {
+    @apply text-blue-600 bg-blue-50 border-blue-200;
+  }
+  
+  .status-error {
+    @apply text-destructive bg-destructive/10 border-destructive/20;
+  }
+}
